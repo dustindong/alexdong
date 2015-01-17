@@ -235,4 +235,17 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
 
+header {
+  background-image: url("assets/images/header-background.jpg");
+  height: 100vh;
+  width: 100vw; }
+
+.nav-ul-homepage {
+  float: right;
+  padding-right: 1.5em; }
+  .nav-ul-homepage li {
+    display: inline-block;
+    text-decoration: none;
+    margin: 1.5em; }
+
 /*# sourceMappingURL=css.css.map */
