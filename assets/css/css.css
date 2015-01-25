@@ -20,7 +20,7 @@ html {
 button,
 input[type="submit"] {
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
+  background-color: #477DCA;
   border-radius: 3px;
   color: white;
   display: inline-block;
@@ -31,7 +31,7 @@ input[type="submit"] {
   text-decoration: none; }
   button:hover,
   input[type="submit"]:hover {
-    background-color: #d9d9d9;
+    background-color: #2c5999;
     color: white; }
   button:disabled,
   input[type="submit"]:disabled {
@@ -84,12 +84,12 @@ a {
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
-  color: #ffffff;
+  color: #477DCA;
   text-decoration: none; }
   a:hover {
-    color: #d9d9d9; }
+    color: #2c5999; }
   a:active, a:focus {
-    color: #d9d9d9;
+    color: #2c5999;
     outline: none; }
 
 hr {
@@ -162,8 +162,8 @@ select[multiple=multiple] {
   textarea:focus,
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   select[multiple=multiple]:focus {
-    border-color: #ffffff;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
+    border-color: #477DCA;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
     outline: none; }
 
 textarea {
@@ -271,6 +271,10 @@ input[type="submit"] {
     .nav-ul-homepage .store-button:hover {
       background-color: #d14233;
       color: #ffffff; }
+  .nav-ul-homepage a {
+    color: #ffffff; }
+  .nav-ul-homepage a:hover {
+    color: #cccccc; }
 
 .homepage-header-text {
   bottom: 10%;
@@ -283,17 +287,17 @@ input[type="submit"] {
   border-radius: 5px;
   border: 1px solid #ffffff; }
 
-.history, .history-red, .history-quote {
+.history, .history-red, .history-quote, .history-classes {
   color: #444;
   padding: 5em 1em;
   text-align: center; }
-  .history h1, .history p, .history-red h1, .history-red p, .history-quote h1, .history-quote p {
+  .history h1, .history p, .history-red h1, .history-red p, .history-quote h1, .history-quote p, .history-classes h1, .history-classes p {
     text-align: left; }
-  .history h1, .history-red h1, .history-quote h1 {
+  .history h1, .history-red h1, .history-quote h1, .history-classes h1 {
     font-size: 1.6em;
     line-height: 1.3em;
     transition: all .5s ease-in; }
-  .history p, .history-red p, .history-quote p {
+  .history p, .history-red p, .history-quote p, .history-classes p {
     font-size: 1.1em;
     line-height: 2em;
     padding-top: 2em; }
@@ -303,7 +307,7 @@ input[type="submit"] {
   max-width: 37.5em; }
 
 .history-red {
-  background-color: #444;
+  background-color: #c0392b;
   color: #ffffff; }
 
 .history-quote .history-quote-container {
@@ -315,5 +319,32 @@ input[type="submit"] {
 .history-quote h2 {
   padding-top: 1em;
   text-align: right; }
+
+.history-classes {
+  background-color: #DDD; }
+  .history-classes h2, .history-classes h3 {
+    text-align: left;
+    padding-top: 2em; }
+  .history-classes h2 {
+    font-size: 1.1em; }
+  .history-classes h3 {
+    font-size: .8em;
+    font-weight: 400; }
+
+footer {
+  background-color: #444;
+  padding: 1em 0;
+  font-family: "Open Sans"; }
+  footer a {
+    color: #ffffff; }
+  footer a:hover {
+    color: #cccccc; }
+
+.footer-homepage {
+  text-align: center; }
+
+.footer-ul-homepage li {
+  display: inline-block;
+  margin: 1.5em; }
 
 /*# sourceMappingURL=css.css.map */

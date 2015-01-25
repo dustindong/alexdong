@@ -1,0 +1,24 @@
+footer {
+  background-color: $dark-gray;
+  padding: 1em 0;
+  font-family: $sans-serif;
+
+  a {
+    color: $snow;
+  }
+
+  a:hover {
+    color: darken($snow,20%);
+  }
+}
+
+.footer-homepage {
+  text-align: center;
+}
+
+.footer-ul-homepage {
+  li {
+    display: inline-block;
+    margin: $base-spacing;
+  }
+}

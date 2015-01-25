@@ -45,6 +45,14 @@
       color: $snow;
     }
   }
+
+  a {
+    color: $snow;
+  }
+
+  a:hover {
+    color: darken($snow,20%);
+  }
 }
 
 .homepage-header-text {
@@ -60,7 +68,7 @@
   border: $base-border;
 }
 
-.history, .history-red, .history-quote {
+.history, .history-red, .history-quote, .history-classes {
   color: $dark-gray;
   padding: 5em 1em;
   text-align: center;
@@ -88,7 +96,7 @@
 }
 
 .history-red {
-  background-color: $dark-gray;
+  background-color: $tomato;
   color: $snow;
 }
 
@@ -106,5 +114,23 @@
   h2 {
     padding-top: 1em;
     text-align: right;
+  }
+}
+
+.history-classes {
+  background-color: $light-gray;
+
+  h2, h3 {
+    text-align: left;
+    padding-top: 2em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  h3 {
+    font-size: .8em;
+    font-weight: 400;
   }
 }
