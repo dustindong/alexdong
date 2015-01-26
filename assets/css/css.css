@@ -410,4 +410,7 @@ footer {
   .workshops h2:nth-last-of-type {
     margin-bottom: 0; }
 
+.store {
+  max-width: 62.5em; }
+
 /*# sourceMappingURL=css.css.map */
