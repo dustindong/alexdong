@@ -1,0 +1,45 @@
+.header-classes {
+  background-color: $dark-gray;
+  background-size: cover;
+  padding-bottom: 5em;
+}
+
+.north-america-classes {
+  padding: 3em 1em;
+
+  h1 {
+    padding-bottom: 1em;
+  }
+
+  h2 {
+    padding: 2em 0 1em 0;
+    font-size: 1.5em;
+  }
+}
+
+.classes-container {
+  h2 {
+    padding: 0;
+  }
+}
+
+.america-container {
+  margin: 0 auto;
+  max-width: em(1000px);
+}
+
+.classes-ul {
+  padding-left: 1.5em;
+  display: inline-block;
+  padding-top: 1em;
+
+  li {
+    display: inline-block;
+    padding: 0 1em 1em 1em;
+    width: 20em;
+  }
+}
+
+.world-classes {
+  background-color: $light-gray;
+}

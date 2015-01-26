@@ -347,36 +347,13 @@ footer {
   display: inline-block;
   margin: 1.5em; }
 
+.header-classes-main {
+  height: 10em; }
+
 .header-classes {
-  background-color: #444;
-  background-size: cover;
-  padding-bottom: 5em; }
+  height: 10em; }
 
 .north-america-classes {
-  padding: 3em 1em; }
-  .north-america-classes h1 {
-    padding-bottom: 1em; }
-  .north-america-classes h2 {
-    padding: 2em 0 1em 0;
-    font-size: 1.5em; }
-
-.classes-container h2 {
-  padding: 0; }
-
-.america-container {
-  margin: 0 auto;
-  max-width: 62.5em; }
-
-.classes-ul {
-  padding-left: 1.5em;
-  display: inline-block;
-  padding-top: 1em; }
-  .classes-ul li {
-    display: inline-block;
-    padding: 0 1em 1em 1em;
-    width: 20em; }
-
-.world-classes {
-  background-color: #DDD; }
+  background-color: #999; }
 
 /*# sourceMappingURL=css.css.map */
