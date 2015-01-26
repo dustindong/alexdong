@@ -12,7 +12,7 @@
   }
 
   h2 {
-    padding: 2em 0 1em 0;
+    padding: 1em 0 1em 0;
     font-size: 1.5em;
   }
 }
@@ -42,4 +42,20 @@
 
 .world-classes {
   background-color: $light-gray;
+}
+
+.rest-of-the-world {
+  padding-top: 2em;
+}
+
+.header-background {
+  background-color: $dark-gray;
+  color: $snow;
+  padding: 3em 0;
+  text-align: center;
+
+  h3 {
+    font-size: 1.3em;
+    padding-top: 1em;
+  }
 }

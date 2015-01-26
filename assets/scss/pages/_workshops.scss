@@ -1,0 +1,17 @@
+.workshops {
+  text-align: left;
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+    margin-bottom: 3em;
+    padding: 1em 0;
+  }
+
+  h2:nth-last-of-type {
+    margin-bottom: 0;
+  }
+}

@@ -259,11 +259,12 @@ input[type="submit"] {
   color: #ffffff;
   font-family: "Open Sans";
   float: right;
-  padding-right: 1.5em; }
+  padding-right: 1.5em;
+  text-transform: uppercase; }
   .nav-ul-homepage li {
     display: inline-block;
     text-decoration: none;
-    margin: 1.5em; }
+    margin: 1.5em 1em; }
   .nav-ul-homepage .store-button {
     background-color: #c0392b;
     border-radius: 5px;
@@ -334,7 +335,8 @@ input[type="submit"] {
 footer {
   background-color: #444;
   padding: 1em 0;
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  text-transform: uppercase; }
   footer a {
     color: #ffffff; }
   footer a:hover {
@@ -357,7 +359,7 @@ footer {
   .north-america-classes h1 {
     padding-bottom: 1em; }
   .north-america-classes h2 {
-    padding: 2em 0 1em 0;
+    padding: 1em 0 1em 0;
     font-size: 1.5em; }
 
 .classes-container h2 {
@@ -378,5 +380,34 @@ footer {
 
 .world-classes {
   background-color: #DDD; }
+
+.rest-of-the-world {
+  padding-top: 2em; }
+
+.header-background {
+  background-color: #444;
+  color: #ffffff;
+  padding: 3em 0;
+  text-align: center; }
+  .header-background h3 {
+    font-size: 1.3em;
+    padding-top: 1em; }
+
+.lineage {
+  background-color: #DDD; }
+  .lineage h1 {
+    text-align: center;
+    padding: 3em 0 1em 0; }
+
+.workshops {
+  text-align: left; }
+  .workshops h1 {
+    font-size: 1.5em; }
+  .workshops h2 {
+    font-size: 1em;
+    margin-bottom: 3em;
+    padding: 1em 0; }
+  .workshops h2:nth-last-of-type {
+    margin-bottom: 0; }
 
 /*# sourceMappingURL=css.css.map */

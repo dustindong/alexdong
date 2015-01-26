@@ -28,11 +28,12 @@
   font-family: $sans-serif;
   float: right;
   padding-right: 1.5em;
+  text-transform: uppercase;
 
   li {
     display: inline-block;
     text-decoration: none;
-    margin: $base-spacing;
+    margin: $base-spacing 1em;
   }
 
   .store-button {
