@@ -1,3 +1,54 @@
 .store {
-  max-width: em(1000px);
+  max-width: em(1000);
+
+  h1 {
+    border-bottom: 2px solid $tomato;
+    padding-bottom: .5em;
+  }
+}
+
+.store-book-container {
+  display: inline-block;
+  width: 20em;
+  padding: 2em 3em;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+
+  h3 {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 1em 0 0 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: .9em;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  h5 {
+    font-size: .8em;
+    padding-top: 1em;
+    font-weight: 400;
+  }
+}
+
+.book-details-link {
+  text-align: center;
+  color: #fff;
+
+  background-color: $tomato;
+  border-radius: 5px;
+  padding: .5em 1.5em;
+
+  &:hover {
+    background-color: lighten($tomato,5%);
+    color: $snow;
+  }
 }
