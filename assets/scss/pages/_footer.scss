@@ -11,6 +11,10 @@ footer {
   a:hover {
     color: darken($snow,20%);
   }
+
+  @media screen and (max-width:700px) {
+    font-size: .8em;
+  }
 }
 
 .footer-homepage {
@@ -21,5 +25,9 @@ footer {
   li {
     display: inline-block;
     margin: $base-spacing;
+
+    @media screen and (max-width:700px) {
+      margin: .5em;
+    }
   }
 }

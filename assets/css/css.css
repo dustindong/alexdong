@@ -249,11 +249,18 @@ input[type="submit"] {
   .header-homepage h1 {
     font-size: 4em;
     letter-spacing: 6px; }
+    @media screen and (max-width: 700px) {
+      .header-homepage h1 {
+        font-size: 2em; } }
   .header-homepage h2 {
     font-size: 1.5em;
     letter-spacing: 4px;
     margin-left: 2em;
     text-transform: uppercase; }
+    @media screen and (max-width: 700px) {
+      .header-homepage h2 {
+        font-size: 1em;
+        margin-left: 1em; } }
 
 .nav-ul-homepage {
   color: #ffffff;
@@ -265,6 +272,9 @@ input[type="submit"] {
     display: inline-block;
     text-decoration: none;
     margin: 1.5em 1em; }
+    @media screen and (max-width: 700px) {
+      .nav-ul-homepage li {
+        margin: .5em; } }
   .nav-ul-homepage .store-button {
     background-color: #c0392b;
     border-radius: 5px;
@@ -276,6 +286,12 @@ input[type="submit"] {
     color: #ffffff; }
   .nav-ul-homepage a:hover {
     color: #cccccc; }
+  @media screen and (max-width: 700px) {
+    .nav-ul-homepage {
+      font-size: .8em;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 1em; } }
 
 .homepage-header-text {
   bottom: 10%;
@@ -332,6 +348,18 @@ input[type="submit"] {
     font-size: .8em;
     font-weight: 400; }
 
+.bg-image {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  width: 100vw; }
+
+.bg-image2 {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  width: 100vw; }
+
 footer {
   background-color: #444;
   padding: 1em 0;
@@ -341,6 +369,9 @@ footer {
     color: #ffffff; }
   footer a:hover {
     color: #cccccc; }
+  @media screen and (max-width: 700px) {
+    footer {
+      font-size: .8em; } }
 
 .footer-homepage {
   text-align: center; }
@@ -348,6 +379,9 @@ footer {
 .footer-ul-homepage li {
   display: inline-block;
   margin: 1.5em; }
+  @media screen and (max-width: 700px) {
+    .footer-ul-homepage li {
+      margin: .5em; } }
 
 .header-classes {
   background-color: #444;
