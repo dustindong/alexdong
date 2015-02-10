@@ -292,7 +292,7 @@ input[type="submit"] {
     color: #cccccc; }
   @media screen and (max-width: 700px) {
     .nav-ul-homepage {
-      font-size: .8em;
+      font-size: .65em;
       text-align: center;
       margin: 0 auto;
       padding-top: 1em; } }
