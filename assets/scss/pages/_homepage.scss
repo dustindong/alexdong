@@ -4,6 +4,8 @@
   color: $snow;
   width: 100vw;
   height: 90vh;
+ -webkit-transform: translateZ(0);
+
 
   h1, h2, h3 {
     clear: both;
@@ -160,11 +162,13 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
+ -webkit-transform: translateZ(0);
 }
 
 .bg-image2 {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: $snow;
   width: 100vw;
+ -webkit-transform: translateZ(0);
 }

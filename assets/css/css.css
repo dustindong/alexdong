@@ -242,7 +242,8 @@ input[type="submit"] {
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  height: 90vh; }
+  height: 90vh;
+  -webkit-transform: translateZ(0); }
   .header-homepage h1, .header-homepage h2, .header-homepage h3 {
     clear: both;
     margin: 0.75em; }
@@ -352,13 +353,15 @@ input[type="submit"] {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  -webkit-transform: translateZ(0); }
 
 .bg-image2 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  -webkit-transform: translateZ(0); }
 
 footer {
   background-color: #444;
