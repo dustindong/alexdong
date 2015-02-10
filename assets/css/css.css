@@ -403,7 +403,7 @@ footer {
   .north-america-classes h1 {
     padding-bottom: 1em; }
   .north-america-classes h2 {
-    padding: 1em .5em 1em .5em;
+    padding: 1em 0 1em 0;
     font-size: 1.5em; }
 
 .classes-container h1 {
@@ -438,7 +438,7 @@ footer {
   text-align: center; }
   .header-background h3 {
     font-size: 1.3em;
-    padding-top: 1em; }
+    padding: 1em .5em 0 .5em; }
 
 .image-popup img {
   margin-bottom: 2em; }
