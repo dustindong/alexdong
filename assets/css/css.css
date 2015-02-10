@@ -243,12 +243,14 @@ input[type="submit"] {
   color: #ffffff;
   width: 100vw;
   height: 90vh;
-  box-sizing: content-box h1, h2, h3;
-    box-sizing-clear: both;
-    box-sizing-margin: 0.75em; }
+  z-index: 0; }
+  .header-homepage h1, .header-homepage h2, .header-homepage h3 {
+    clear: both;
+    margin: 0.75em; }
   .header-homepage h1 {
     font-size: 4em;
-    letter-spacing: 6px; }
+    letter-spacing: 6px;
+    margin-left: .7em; }
     @media screen and (max-width: 700px) {
       .header-homepage h1 {
         font-size: 2em; } }
@@ -352,15 +354,13 @@ input[type="submit"] {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw;
-  box-sizing: content-box; }
+  width: 100vw; }
 
 .bg-image2 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw;
-  box-sizing: content-box; }
+  width: 100vw; }
 
 footer {
   background-color: #444;
