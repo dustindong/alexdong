@@ -238,7 +238,7 @@ input[type="submit"] {
   white-space: nowrap; }
 
 .header-homepage {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center scroll no-repeat;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw;
@@ -349,16 +349,19 @@ input[type="submit"] {
     font-weight: 400; }
 
 .bg-image {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center scroll no-repeat;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw; }
 
 .bg-image2 {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center scroll no-repeat;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 footer {
   background-color: #444;
