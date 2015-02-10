@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/css.css">
+    <link rel="stylesheet" href="../../assets/css/popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Alex Dong Taiji</title>
+  </head>
+
+<body>
+
+  <header class="header-classes">
+    <nav class="nav-homepage">
+      <ul class="nav-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a class="workshop-highlight" href="../../workshops/">Workshops</a></li>
+        <li><a class="store-button" href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="header-background">
+    <h1>Thurston County, Washington</h1>
+  </div>
+
+  <section class="history-classes">
+    <div class="history-container classes-container">
+      <a href="#andyholmes-popup" class="animated_popup"><h1>Instructor: Andy Holmes</h1></a>
+        <div id="andyholmes-popup" class="image-popup" style="display:none">
+          <img src="../../assets/images/instructor/andyholmes.jpg">
+          <h3>Andy Holmes</h3>
+          <p>Andy Holmes started the Pacific Northwest School in the late 1990's and continues to teach around the Seattle/Portland area. He instructs classes and provides services as a Tai Chi consultant for a wide range of health facilities; hospitals and rehabilitation centers, martial arts schools, state agencies, and private fitness groups. His time as a teacher is matched with practice and continual education. Andy never stops learning, and sharing his own growth path has allowed Andy to effectively teach people Tai Chi through many group classes and private lessons. He has traveled the globe to further his skills including on-site training in China, Canada, England, Greece, Thailand, Brazil, and 7 states in the USA. His goal is to better his taiji practice and grow awareness in himself and others through positive action as a wellness professional spreading the teaching of Master Alex.</p>
+        </div>
+        <p>Tai chi 101 Mondays 8pm
+        <br>L A Fitness 1200 Galaxy Drive, Lacey , WA 98516</p>
+        <p>Tai chi 103 Wednesdays 5:30-6:30pm
+        <br>Fusion Integrated Body Studio
+        <br>302 Columbia St. NW Olympia 360-596-9696
+        <p>$20 per class or 6 non-expiring classes for $100
+        <br><a href="http://andyholmes.us/Schedule.html" target="_blank">Full Class Schedule</a>
+        <br>Email: <a href="mailto:slowset@gmail.com">slowset@gmail.com</a></p>
+    </div>
+
+    <div class="history-container classes-container instructor-container">
+        <h1>Instructor: David Graham</h1>
+        <p>Lacey Parks and Recreation Center
+        <br>Olympia, Washington
+        <br>Tuesday Night 5:45 PM-7:00 PM
+        <br>Advanced class - Tumwater
+        <br>Monday Night 5:30 PM-7:00 PM</p>
+        <p>To Register: 360-491-0857
+        <br>Other Info: 360 951 2230
+        <br>Email: <a href="dlgbay88@hotmail.com" target="_blank">dlgbay88@hotmail.com</a></p>
+    </div>
+
+  </section>
+
+  <footer>
+    <nav class="footer-homepage">
+      <ul class="footer-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a href="../../workshops/">Workshops</a></li>
+        <li><a href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

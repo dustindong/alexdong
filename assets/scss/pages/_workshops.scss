@@ -1,4 +1,5 @@
 .workshops {
+  background-color: $light-gray;
   text-align: left;
 
   h1 {
@@ -14,4 +15,8 @@
   h2:nth-last-of-type {
     margin-bottom: 0;
   }
+}
+
+.book-details-popup {
+  width: 100%;
 }

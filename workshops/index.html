@@ -5,6 +5,7 @@
   <head>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../assets/css/css.css">
+    <link rel="stylesheet" href="../assets/css/popup.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Alex Dong Taiji</title>
@@ -26,20 +27,65 @@
   </header>
 
   <div class="header-background">
-    <h1>Store</h1>
+    <h1>Workshops</h1>
     <h3>Upcoming Intense And Focused Training Around The World</h3>
   </div>
 
   <section class="history workshops">
     <div class="history-container">
-      <a href="#"><h1>Westwater, Colorado & Utah Border</h1>
-      <h2>April 24th 2015 - May 2nd 2015</h2></a>
+      <a href="#westwater-popup" class="animated_popup"><h1>Westwater</h1></a>
+      <h2>April 24th 2015 - May 2nd 2015</h2>
+      <div id="westwater-popup" style="display:none" class="image-popup" class="book-details-popup">
+      <h3>Westwater Intensive Training 2015</h3>
 
-      <a href="#"><h1>European Tour 2015</h1>
-      <h2>June 20th 2015 - July 3rd 2015</h2></a>
+      <p>Friday April 24th to Saturday May 2nd 2015</p>
 
-      <a href="#"><h1>Greece</h1>
-      <h2>September 28th 2015 - October 4th 2015</h2></a>
+      <p>Highlights will be to reteach the Fajin form and work on Fajin energy, Push Hands and weapons. More details to follow.</p>
+
+      <p>West Water camp is located on the beautiful high desert of the Utah - Colorado border, forty five minutes from the Grand Junction, Colorado Walker Field airport and five hours from Denver and Salt Lake City. It's warm during the day and cool at night. At 5000 feet in elevation, the stars and moon are more beautiful and bright. Miles away from civilization, for nearly a decade students from around the world have found the solitude, and nature of the area, a powerful adjunct to their study of Taj Ji.</p>
+
+      <p>This camp has no indoor sleeping arrangements; everyone has to bring their own tent and bedding for camping, and personal things like towel, soap, shampoo, sun block, hat and flip flops. Keep in mind late night temperature could drop down to freezing. Meals, showers, washing machine and two flushing toilets along with dining and training halls are provided.</p>
+
+      <p>Contact: Alex Dong <a href="mailto:alexdongtaiji@hotmail.com">alexdongtaiji@hotmail.com</a></p>
+
+      <p><a href="http://www.alexdongtaiji.com/westwater2015/Westwater2015.docx" target="_blank">Download a booking form</a></p>
+      </div>
+
+      <a href="#euro2015-popup" class="animated_popup"><h1>European Tour 2015</h1></a>
+      <h2>June 20th 2015 - July 3rd 2015</h2>
+
+      <div id="euro2015-popup" style="display:none" class="image-popup" class="book-details-popup">
+      <h3>European Tour 2015</h3>
+
+      <p>Saturday June 20th to Friday July 3nd 2015</p>
+
+      <p>This tour will be limited to 20 people. Plus some locals. Please register ASAP. Some may have to share a double bed to maximize the number and keep the costs down. Due to limited space, all participants must attend/pay all classes.</p>
+
+      <p>Majorca, Spain
+      <br>June 20th --- Check-in in the afternoon and Dinner
+      <br>June 21st --- AM and PM class
+      <br>June 22nd to 25th --- Free time during the day. Class in the evening.
+      <br>June 26th --- Travel to Siena
+      <br>Costs $520 for double occupancy room and Instruction. Plus €160 for food pay to Armand upon <br>arrival.
+      <br>Does not include lunches and transportation. Our plan is to group students into 3 to 4 and share a car rental. This way, people will have more flexibility to what they want to do during the day.
+      <br>Siena, Italy
+      <br>June 26th --- Check in and Dinner
+      <br>June 27th to 29th --- AM and PM classes
+      <br>June 30th --- Tour Tuscany
+      <br>July 1st and 2nd --- Morning class and visit Siena and The Palio in the afternoon
+      <br>July 3rd --- End of Tour
+      <br>Costs €410 for double occupancy and €500 for single (only if available). Inclusive except for one lunch and two dinners. Pay directly to Lagavina B and B.
+      <br>€90 fee for the tours, pick-ups and drop-offs. Pay to Claudio.
+      <br>€280 tuition ($350). Pay to Alex Dong.
+      <p>Download Booking Form in <a href="http://www.alexdongtaiji.com/europe2015/European_Tour_2015.docx" target="_blank">MS Word</a> or <a href="http://www.alexdongtaiji.com/europe2015/European_Tour_2015.pdf" target="_blank">PDF</a> format. Prices above are in US dollars or Euros.</p>
+
+      <p>Send to Alex Dong, Alex Dong Tai Ji, 69-11 Yellowstone Blvd. Apt. Forest Hills, New York, NY 11375, USA with payment</p>
+
+      <p>Booking and information: please email: <a href="alexdongtaiji@gmail.com">alexdongtaiji@gmail.com</a></p>
+      </div>
+
+      <a href="#"><h1>Greece</h1></a>
+      <h2>September 28th 2015 - October 4th 2015</h2>
     </div>
   </section>
 
@@ -55,6 +101,87 @@
       </ul>
     </nav>
   </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
 
 </body>
 

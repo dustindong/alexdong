@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/css.css">
+    <link rel="stylesheet" href="../../assets/css/popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Alex Dong Taiji</title>
+  </head>
+
+<body>
+
+  <header class="header-classes">
+    <nav class="nav-homepage">
+      <ul class="nav-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a class="workshop-highlight" href="../../workshops/">Workshops</a></li>
+        <li><a class="store-button" href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="header-background">
+    <h1>Windham, New Hampshire</h1>
+  </div>
+
+  <section class="history-classes">
+    <div class="history-container classes-container">
+      <a href="#janetbriggs-popup" class="animated_popup"><h1>Instructor: Janet Briggs</h1></a>
+        <div id="janetbriggs-popup" class="image-popup" style="display:none">
+          <h3>Janet Briggs</h3>
+          <p>Janet was born in Japan, and came to the United States following her graduation from high school. While growing up, she used to dread her physical education classes, and therefore never expected that she would become a dedicated martial arts practitioner.</p>
+
+          <p>In 1999, she started formal training in two styles of traditional Okinawan karate, Goju-Ryu and Shorin-Ryu. A few years later, her martial arts studies expanded to include kobujutsu (ancient Okinawan weapons), and in 2002, she also started teaching karate regularly. She currently holds third-degree black belts in both Goju-Ryu and Shorin-Ryu karate, and a first-degree black belt in kobujutsu. She continues her studies at Golden Crane Traditional Martial Arts in Windham, New Hampshire.</p>
+
+          <p>In 2004, Janet started taking taiji lessons from Chris McKenna. She was introduced to Master Alex Dong in 2007 at one of his workshops, and found him to be an inspiring taiji practitioner as well as an excellent instructor. Since 2008, she has been studying directly under Master Alex by attending his monthly New York workshops, as well as other intensive workshops offered throughout the country.</p>
+
+          <p>Janet directs the taiji program at Golden Crane Traditional Martial Arts, and has been teaching taiji at the school since 2008. She enjoys sharing her knowledge and love of karate and taiji with her students. Her solid understanding of body mechanics, gained from years of training, is particularly beneficial for her students in learning how to execute each movement in a precise manner. Having trained in both external and internal (hard and soft) martial arts, she believes that our ultimate goal is to attain a higher level of self awareness through integration of our body, mind and spirit.</p>
+        </div>
+      <p><strong>School:</strong> Golden Crane Traditional Martial Arts</p>
+      <p><strong>Class schedule:</strong> Please visit school website <a href="http://www.golden-crane.com" target="_blank">www.golden-crane.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:janetbriggs79@gmail.com">janetbriggs79@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <nav class="footer-homepage">
+      <ul class="footer-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a href="../../workshops/">Workshops</a></li>
+        <li><a href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

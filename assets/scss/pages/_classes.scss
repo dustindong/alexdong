@@ -19,10 +19,11 @@
 
 .classes-container {
   h1 {
-    padding-bottom: 2em;
+    padding-bottom: 0;
   }
 
   h2 {
+    margin-top: 3em;
     padding: 0;
   }
 
@@ -63,4 +64,18 @@
     font-size: 1.3em;
     padding-top: 1em;
   }
+}
+
+.image-popup {
+  img {
+    margin-bottom: 2em;
+  }
+}
+
+.instructor-container {
+  padding-top: 3em;
+}
+
+.london-title {
+  padding-top: 3em;
 }

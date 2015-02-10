@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/css.css">
+    <link rel="stylesheet" href="../../assets/css/popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Alex Dong Taiji</title>
+  </head>
+
+<body>
+
+  <header class="header-classes">
+    <nav class="nav-homepage">
+      <ul class="nav-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a class="workshop-highlight" href="../../workshops/">Workshops</a></li>
+        <li><a class="store-button" href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="header-background">
+    <h1>Siena, Italy</h1>
+  </div>
+
+  <section class="history-classes">
+    <div class="history-container classes-container">
+      <a href="#tonidemoulin-popup" class="animated_popup"><h1>Instructor: Claudio Corbelli</h1></a>
+        <div id="tonidemoulin-popup" class="image-popup" style="display:none">
+          <img src="../../assets/images/instructor/claudiocorbelli.jpg">
+          <h3>Claudio Corbelli</h3>
+          <p>Claudio was born in Siena, Italy. He started studying Taiji while he was in Newfoundland, Canada to pursue a PhD degree in Biology. Here a local teacher of the Yang Style introduced him to Taiji in 2002. In the same year Claudio went to Moncton, New Brunswick, to take part to a Taiji camp taught by Master Alex Dong. Since then he has been practicing Dong Style Taiji. In 2007 Claudio left his research position in the USA and came back to his native country to start up a Taiji school. In Siena he now also runs his non-profit charitable organization www.nirodha.it</p>
+
+          <p>Claudio has been a teacher since 2005 and he has been visiting regularly with Master Alex Dong to improve on his Taiji. He takes part to training camps and workshops in Europe and North America. Claudio is also interested in other Eastern philosophies and practices Buddhist meditation.</p>
+
+          <p>Claudio is aware that he has embarked in a lifelong Taiji journey, and he is very excited about it. In a world of fast information, Internet and quick fixes, he particularly treasures the old teaching process, the oral tradition, and the relationship master and disciple. Feeling the presence of all the previous masters in Master Alex's teachings is enlightening. Seeing Master Alex putting the teachings into practice is a memorable experience. The time spent in learning a true art, the solo practice and the fellowship with his Taiji friends are now very important parts of Claudio's life.</p>
+        </div>
+      <p>Contact: Phone +39-331-3267316 or <a href="mailto:claudio.dongtaichi@gmail.com">claudio.dongtaichi@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <nav class="footer-homepage">
+      <ul class="footer-ul-homepage">
+        <li><a href="http://www.alexdongtaiji.com">Home</a></a></li>
+        <li><a target="_blank" href="http://alexdongtaiji.tumblr.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a href="../../workshops/">Workshops</a></li>
+        <li><a href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
