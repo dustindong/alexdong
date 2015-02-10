@@ -6,6 +6,10 @@
     border-bottom: 2px solid $tomato;
     padding-bottom: .5em;
   }
+
+  @media screen and (max-width:675px) {
+    text-align: center;
+  }
 }
 
 .store-section {
