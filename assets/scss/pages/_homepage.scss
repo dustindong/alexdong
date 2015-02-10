@@ -5,10 +5,6 @@
   width: 100vw;
   height: 90vh;
 
-  @media (max-width: @iphone-screen) {
-    background-attachment: scroll;
-  }
-
   h1, h2, h3 {
     clear: both;
     margin: $base-spacing / 2;
@@ -30,9 +26,10 @@
     text-transform: uppercase;
     @media screen and (max-width: 700px) {
       font-size: 1em;
-      margin-left: 1em;
+      margin-left: 1.5em;
     }
   }
+
 }
 
 .nav-ul-homepage {
@@ -164,10 +161,6 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
-
-  @media (max-width: @iphone-screen) {
-    background-attachment: scroll;
-  }
 }
 
 .bg-image2 {
@@ -175,8 +168,4 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
-
-  @media (max-width: @iphone-screen) {
-    background-attachment: scroll;
-  }
 }
