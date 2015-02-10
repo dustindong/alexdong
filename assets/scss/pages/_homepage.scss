@@ -4,8 +4,10 @@
   color: $snow;
   width: 100vw;
   height: 90vh;
- -webkit-transform: translateZ(0);
 
+  @media (max-width: @iphone-screen) {
+    background-attachment: scroll;
+  }
 
   h1, h2, h3 {
     clear: both;
@@ -162,7 +164,10 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
- -webkit-transform: translateZ(0);
+
+  @media (max-width: @iphone-screen) {
+    background-attachment: scroll;
+  }
 }
 
 .bg-image2 {
@@ -170,5 +175,8 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
- -webkit-transform: translateZ(0);
+
+  @media (max-width: @iphone-screen) {
+    background-attachment: scroll;
+  }
 }
