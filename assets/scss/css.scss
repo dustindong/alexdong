@@ -2,3 +2,8 @@
 @import "neat/neat";
 @import "base/base";
 @import "pages/pages";
+
+body, html, main {
+  /* important */
+  height: 100%;
+}

@@ -4,7 +4,7 @@
   color: $snow;
   width: 100vw;
   height: 90vh;
-  z-index: 0;
+  min-height: 100%;
 
   h1, h2, h3 {
     clear: both;
@@ -164,6 +164,7 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
+  min-height: 100%;
 }
 
 .bg-image2 {
@@ -171,4 +172,5 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
+  min-height: 100%;
 }

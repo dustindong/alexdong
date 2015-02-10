@@ -243,7 +243,7 @@ input[type="submit"] {
   color: #ffffff;
   width: 100vw;
   height: 90vh;
-  z-index: 0; }
+  min-height: 100%; }
   .header-homepage h1, .header-homepage h2, .header-homepage h3 {
     clear: both;
     margin: 0.75em; }
@@ -354,13 +354,15 @@ input[type="submit"] {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  min-height: 100%; }
 
 .bg-image2 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  min-height: 100%; }
 
 footer {
   background-color: #444;
@@ -530,5 +532,9 @@ footer {
   text-align: center; }
 .popup p {
   line-height: 1.8em; }
+
+body, html, main {
+  /* important */
+  height: 100%; }
 
 /*# sourceMappingURL=css.css.map */
