@@ -4,6 +4,8 @@
   color: $snow;
   width: 100vw;
   height: 90vh;
+  box-sizing: content-box
+
 
   h1, h2, h3 {
     clear: both;
@@ -162,6 +164,8 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
+  box-sizing: content-box
+
 }
 
 .bg-image2 {
@@ -169,7 +173,6 @@
   background-size: cover;
   color: $snow;
   width: 100vw;
-  height:100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  box-sizing: content-box
+
 }

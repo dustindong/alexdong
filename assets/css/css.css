@@ -242,10 +242,10 @@ input[type="submit"] {
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  height: 90vh; }
-  .header-homepage h1, .header-homepage h2, .header-homepage h3 {
-    clear: both;
-    margin: 0.75em; }
+  height: 90vh;
+  box-sizing: content-box h1, h2, h3;
+    box-sizing-clear: both;
+    box-sizing-margin: 0.75em; }
   .header-homepage h1 {
     font-size: 4em;
     letter-spacing: 6px; }
@@ -352,16 +352,15 @@ input[type="submit"] {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
-  width: 100vw; }
+  width: 100vw;
+  box-sizing: content-box; }
 
 .bg-image2 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch; }
+  box-sizing: content-box; }
 
 footer {
   background-color: #444;
