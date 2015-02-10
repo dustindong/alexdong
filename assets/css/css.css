@@ -238,11 +238,14 @@ input[type="submit"] {
   white-space: nowrap; }
 
 .header-homepage {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center fixed no-repeat;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw;
   height: 90vh; }
+  @media screen and (min-width: 768px) {
+    .header-homepage {
+      background-attachment: fixed; } }
   .header-homepage h1, .header-homepage h2, .header-homepage h3 {
     clear: both;
     margin: 0.75em; }
@@ -350,16 +353,22 @@ input[type="submit"] {
     font-weight: 400; }
 
 .bg-image {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
+  background: linear-gradient(transparent, black), url("../images/bg-image3.jpg") center center no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw; }
+  @media screen and (min-width: 768px) {
+    .bg-image {
+      background-attachment: fixed; } }
 
 .bg-image2 {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
+  background: linear-gradient(transparent, black), url("../images/bg-image2.jpg") center center no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw; }
+  @media screen and (min-width: 768px) {
+    .bg-image2 {
+      background-attachment: fixed; } }
 
 footer {
   background-color: #444;
