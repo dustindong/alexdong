@@ -242,7 +242,9 @@ input[type="submit"] {
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  height: 90vh; }
+  height: 90vh;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
   .header-homepage h1, .header-homepage h2, .header-homepage h3 {
     clear: both;
     margin: 0.75em; }
@@ -354,14 +356,16 @@ input[type="submit"] {
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  min-height: 100%; }
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
 
 .bg-image2 {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
   background-size: cover;
   color: #ffffff;
   width: 100vw;
-  min-height: 100%; }
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
 
 footer {
   background-color: #444;
@@ -531,9 +535,5 @@ footer {
   text-align: center; }
 .popup p {
   line-height: 1.8em; }
-
-body, html, main {
-  /* important */
-  height: 100%; }
 
 /*# sourceMappingURL=css.css.map */
