@@ -1,5 +1,5 @@
 .header-homepage {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center fixed no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/header-background.jpg") center center scroll no-repeat;
   background-size: cover;
   color: $snow;
   width: 100vw;
@@ -158,25 +158,15 @@
 }
 
 .bg-image {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center fixed no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image3.jpg") center center scroll no-repeat;
   background-size: cover;
   color: $snow;
   width: 100vw;
 }
 
 .bg-image2 {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center fixed no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../images/bg-image2.jpg") center center scroll no-repeat;
   background-size: cover;
   color: $snow;
   width: 100vw;
-
-  @media only screen
-    and (min-device-width : 540px)
-    and (max-device-width : 960px)
-    and (orientation : portrait) { background-attachment: scroll; }
-
-  @media only screen
-    and (min-device-width : 540px)
-    and (max-device-width : 960px)
-    and (orientation : landscape) {background-attachment: scroll;}
 }
