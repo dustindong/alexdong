@@ -359,6 +359,12 @@ input[type="submit"] {
   background-size: cover;
   color: #ffffff;
   width: 100vw; }
+  @media only screen and (min-device-width: 540px) and (max-device-width: 960px) and (orientation: portrait) {
+    .bg-image2 {
+      background-attachment: scroll; } }
+  @media only screen and (min-device-width: 540px) and (max-device-width: 960px) and (orientation: landscape) {
+    .bg-image2 {
+      background-attachment: scroll; } }
 
 footer {
   background-color: #444;
