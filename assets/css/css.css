@@ -403,7 +403,7 @@ footer {
   .north-america-classes h1 {
     padding-bottom: 1em; }
   .north-america-classes h2 {
-    padding: 1em 0 1em 0;
+    padding: 1em .5em 1em .5em;
     font-size: 1.5em; }
 
 .classes-container h1 {
