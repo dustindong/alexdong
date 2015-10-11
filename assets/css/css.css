@@ -310,7 +310,7 @@ input[type="submit"] {
 
 .history, .history-red, .history-quote, .history-classes {
   color: #444;
-  padding: 10em 1em;
+  padding: 5em 1em;
   text-align: center; }
   .history h1, .history p, .history-red h1, .history-red p, .history-quote h1, .history-quote p, .history-classes h1, .history-classes p {
     text-align: left; }
