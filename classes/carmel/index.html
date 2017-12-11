@@ -1,1 +1,145 @@
-Place holder.
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/css.css">
+    <link rel="stylesheet" href="../../assets/css/popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Alex Dong Taiji</title>
+  </head>
+
+<body>
+
+  <header class="header-classes">
+    <nav class="nav-homepage">
+      <ul class="nav-ul-homepage">
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a class="workshop-highlight" href="../../workshops/">Workshops</a></li>
+        <li><a class="store-button" href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="header-background">
+    <h1>Carmel Valley, California</h1>
+  </div>
+
+  <section class="history-classes">
+    <div class="history-container classes-container">
+      <a href="#andyholmes-popup" class="animated_popup"><h1>Instructor: Andrew Allison</h1></a>
+        <div id="andyholmes-popup" class="image-popup" style="display:none">
+          <img src="../../assets/images/instructor/andrewallison.jpg">
+          <h3>Andrew Allison</h3>
+          <p>A certified teacher of the Dong Yingjie Legacy, i.e., classical Yang-style, Taiji School, Andrew has studied the art since the early 1980s, initially under Master Wu Ta-Yeh at the Taijiquan Tutelage of Palo Alto and under Master Alex Dong since 1994. He shares Alex's belief in the importance of maintaining the traditional style handed down through four generations of the Dong (Tung) family. Andrew teaches classes at the Carmel Foundation in Carmel, Del Mesa Carmel and assists at the Jing Chi Shen school in Carmel Valley.</p>
+        </div>
+        <p>Del Mesa Carmel, Carmel Valley
+        <br>Beginning Tai Chi Wednesday 9:00-10:30am
+        <br>Phone: 831-626-4361
+        <br>Email (preferred): <a href="mailto:allison.aa@gmail.com">allison.aa@gmail.com</a></p>
+    </div>
+    
+  </section>
+
+  <footer>
+    <nav class="footer-homepage">
+      <ul class="footer-ul-homepage">
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a href="../../workshops/">Workshops</a></li>
+        <li><a href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
