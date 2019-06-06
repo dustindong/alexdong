@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/css.css">
+    <link rel="stylesheet" href="../../assets/css/popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Alex Dong Taiji</title>
+  </head>
+
+<body>
+
+  <header class="header-classes">
+    <nav class="nav-homepage">
+      <ul class="nav-ul-homepage">
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a class="workshop-highlight" href="../../workshops/">Workshops</a></li>
+        <li><a class="store-button" href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="header-background">
+    <h1>Hockley, Essex England</h1>
+  </div>
+
+  <section class="history-classes">
+   
+   <div class="history-container classes-container">
+     <a href="#jonbell-popup" class="animated_popup"><h1>Instructor: John Bell</h1></a>
+     <div id="jonbell-popup" class="image-popup" style="display:none">
+        <h3>John Bell</h3>
+        <p>My experience in martial arts go back to the sixties where I learnt
+        judo for a number of years.
+        </br>
+        In the nineties I tried various martial arts/self defence classes
+        including wing-chun, akido, karate, and found that these were not for
+        me.
+        </br>
+        I started to learn Tai Chi in 1997, with the "John Ding Academy of Tai
+        Chi". I attended 2 classes a week for 5 years learning Tai Chi and push
+        hands. In 2002 I was then invited to attend the advance senior Tai Chi
+        class where I would be taught by the Tai Chi master, covering all
+        aspects of Tai Chi, including instructor training (weekend seminars),
+        Straight Sword, Broad sword, Self defence, Tai Chi application,
+        Qi-gong, single and double push hands and freestyle push hands.
+        </br>
+        During the time I was with ‘JDATC’ I also attended a number of week
+        long Tai Chi retreats (2 per year). I also went to China with the
+        Tai Chi Master, where we combined sight seeing & Tai Chi training with
+        local Chinese Tai Chi masters and their students. We also visited all
+        the Tai Chi villages & Temples to observe how they trained their
+        students, these included, The Shaolin Temple, Yang Village, Chen
+        village, Taoist Temple, the Wudang Mountains where a lot of other
+        martial art schools are located.
+        </br>
+        We visited Hong Kong to train with the Tai Chi Grand Master Ip Tai-Tak.
+        </br>
+        I left "John Ding Academy of Tai Chi" in January 2010 and I met with
+        Phillip Shields (Dong Style) and started Tai Chi and push hands
+        training (also qi-gong, Da-Lu, walking push hands, applications). I
+        liked what I saw, the in depth training of "Dong Style Tai Chi" I
+        started training only with Phillip, going to as many of the classes
+        that I could attend. I took early retirement from my Job in August
+        2011, this allowed me to train daily. I trained and helped out when
+        required with classes 5 days a week (minimum 8 hours training a week)
+        up to February 2014.
+        </br>
+        Since the beginning of 2014, I started to teach Tai Chi at 4 classes a
+        week, now 3 classes per week. I teach Yang style Tai Chi (slow set),
+        qi-gong, push hands, broadsword and now have started teaching the
+        double stick form.
+        </p>
+      </div>
+
+      <h2>Class schedule</h2>
+      <p>Wednesdays 10:00am - 11:30am<br>
+        1st Hawkwell Scout Group Hut<br>
+        75 White Hart Lane, Hockley, SS5 4DP<br>
+        Email <a href="mailto:taichihockley@outlook.com">taichihockley@outlook.com</a><br>
+        Phone 07753125696<br>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <nav class="footer-homepage">
+      <ul class="footer-ul-homepage">
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
+        <li><a href="../../classes/">Classes</a></li>
+        <li><a href="../../legacy/">Legacy</a></li>
+        <li><a href="../../workshops/">Workshops</a></li>
+        <li><a href="../../store/">Store</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.popup.js"></script>
+  <script>
+    $(function(){
+
+      /*-------------------------------
+
+        GENERAL EXAMPLES
+
+      -------------------------------*/
+
+      // Default usage
+      $('.default_popup').popup();
+
+      // Animated popup
+      $('.animated_popup').popup({
+        show        : function($popup, $back){
+
+          var plugin = this,
+            center = plugin.getCenter();
+
+          $popup
+            .css({
+              top     : - $popup.children().outerHeight(),
+              left    : center.left,
+              opacity : 1
+            })
+            .animate({top : center.top}, 500, 'easeOutBack', function(){
+              // Call the open callback
+              plugin.o.afterOpen.call(plugin);
+            });
+
+        }
+      });
+
+      // Call ALL the callbacks
+      $('.callback_popup').popup({
+        beforeOpen          : function(type){
+          console.log('beforeOpen -', type);
+        },
+        afterOpen           : function(){
+          console.log('afterOpen');
+        },
+        beforeClose         : function(){
+          console.log('beforeClose');
+        },
+        afterClose          : function(){
+          console.log('afterClose');
+        }
+      });
+
+      // Error popup
+      $('.error_popup').popup({
+        error   : function(content, type){
+
+          // Just call open again, it'll replace the content
+          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
+        }
+      });
+
+    });
+
+    /*---------------------
+
+      JQUERY EASING
+
+    */
+
+    $.extend($.easing, {
+      easeOutBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+      },
+      easeInBack: function (x, t, b, c, d, s) {
+        if (s == undefined) s = 1.70158;
+        return c*(t/=d)*t*((s+1)*t - s) + b;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

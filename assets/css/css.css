@@ -342,7 +342,8 @@ input[type="submit"] {
   text-align: right; }
 
 .history-classes {
-  background-color: #DDD; }
+  background-color: #DDD;
+  min-height: 100vh; }
   .history-classes h2, .history-classes h3 {
     text-align: left;
     padding-top: 2em; }
