@@ -549,4 +549,20 @@ footer {
 .red-highlight {
   color: #c0392b; }
 
+.digital-store {
+  margin: 0 auto;
+  max-width: 62.5em;
+  padding: 4em 1em;
+}
+
+.digital-store h2 {
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}
+
+.digital-store h3 {
+  font-size: 1.2em;
+  line-height: 2;
+}
+
 /*# sourceMappingURL=css.css.map */
