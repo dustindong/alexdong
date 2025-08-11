@@ -9,6 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Alex Dong Taiji</title>
+
+    <!-- Minimal, scoped styles for the NEW modal only -->
+    <style>
+      .modern-modal-backdrop{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:saturate(120%) blur(8px); z-index:1000}
+      .modern-modal-backdrop[data-open="true"]{display:grid}
+      .modern-modal{width:min(720px,92vw); max-height:85vh; overflow:auto; background:#fff; color:#111; border-radius:18px; box-shadow:0 30px 70px rgba(0,0,0,.45); transform:translateY(8px) scale(.98); opacity:0; transition:transform .18s ease, opacity .18s ease; border:1px solid rgba(0,0,0,.06)}
+      .modern-modal[data-state="open"]{transform:translateY(0) scale(1); opacity:1}
+      .modern-modal.dark{background:#12161a; color:#e6e9ee; border-color:rgba(148,163,184,.18)}
+      .modern-modal a{color:#126fe4}
+      .modern-modal.dark a{color:#73c3ff}
+      .modern-modal__header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 18px 0}
+      .modern-modal__title{font-family:Merriweather, serif; margin:0; font-size:22px}
+      .modern-modal__content{padding:8px 18px 18px}
+      .modern-modal__close{border:none; background:transparent; font-size:18px; color:#667085; padding:8px; border-radius:10px; cursor:pointer}
+      .modern-modal__close:hover{background:rgba(0,0,0,.06)}
+      @media (prefers-color-scheme: dark){ .modern-modal__close:hover{background:rgba(148,163,184,.12)} }
+    </style>
   </head>
 
 <body>
@@ -180,84 +197,99 @@
   </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-  <script src="../assets/js/jquery.popup.js"></script>
+  <!-- Removed old jquery.popup.js in favor of modern modal. If you must keep the file for other pages, it's okay; it just won't be used here. -->
+
+  <!-- Modern, accessible modal that reuses your existing hidden divs as content -->
+  <div class="modern-modal-backdrop" id="modern-backdrop" aria-hidden="true">
+    <section class="modern-modal" id="modern-modal" role="dialog" aria-modal="true" aria-labelledby="modern-title" aria-describedby="modern-body">
+      <header class="modern-modal__header">
+        <h3 id="modern-title" class="modern-modal__title"></h3>
+        <button class="modern-modal__close" id="modern-close" aria-label="Close">✕</button>
+      </header>
+      <div id="modern-body" class="modern-modal__content"></div>
+    </section>
+  </div>
+
   <script>
-    $(function(){
+    (function(){
+      const backdrop = document.getElementById('modern-backdrop');
+      const modal = document.getElementById('modern-modal');
+      const titleEl = document.getElementById('modern-title');
+      const bodyEl = document.getElementById('modern-body');
+      const closeBtn = document.getElementById('modern-close');
+      let lastFocused = null;
 
-      /*-------------------------------
+      // Respect site theme if user prefers dark mode
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(prefersDark) modal.classList.add('dark');
 
-        GENERAL EXAMPLES
-
-      -------------------------------*/
-
-      // Default usage
-      $('.default_popup').popup();
-
-      // Animated popup
-      $('.animated_popup').popup({
-        show        : function($popup, $back){
-
-          var plugin = this,
-            center = plugin.getCenter();
-
-          $popup
-            .css({
-              top     : - $popup.children().outerHeight(),
-              left    : center.left,
-              opacity : 1
-            })
-            .animate({top : center.top}, 500, 'easeOutBack', function(){
-              // Call the open callback
-              plugin.o.afterOpen.call(plugin);
-            });
-
-        }
-      });
-
-      // Call ALL the callbacks
-      $('.callback_popup').popup({
-        beforeOpen          : function(type){
-          console.log('beforeOpen -', type);
-        },
-        afterOpen           : function(){
-          console.log('afterOpen');
-        },
-        beforeClose         : function(){
-          console.log('beforeClose');
-        },
-        afterClose          : function(){
-          console.log('afterClose');
-        }
-      });
-
-      // Error popup
-      $('.error_popup').popup({
-        error   : function(content, type){
-
-          // Just call open again, it'll replace the content
-          this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
-        }
-      });
-
-    });
-
-    /*---------------------
-
-      JQUERY EASING
-
-    */
-
-    $.extend($.easing, {
-      easeOutBack: function (x, t, b, c, d, s) {
-        if (s == undefined) s = 1.70158;
-        return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
-      },
-      easeInBack: function (x, t, b, c, d, s) {
-        if (s == undefined) s = 1.70158;
-        return c*(t/=d)*t*((s+1)*t - s) + b;
+      function openModalFromTargetId(id){
+        const src = document.getElementById(id);
+        if(!src) return;
+        // Extract first child heading for the title if present
+        const h = src.querySelector('h3, h2, h1');
+        titleEl.textContent = h ? h.textContent : '';
+        // Clone everything else for the body
+        bodyEl.innerHTML = '';
+        Array.from(src.children).forEach((child, idx)=>{
+          if(idx === 0 && /H[1-6]/.test(child.tagName)) return; // skip the heading already used as title
+          bodyEl.appendChild(child.cloneNode(true));
+        });
+        lastFocused = document.activeElement;
+        backdrop.dataset.open = 'true';
+        backdrop.setAttribute('aria-hidden','false');
+        modal.dataset.state = 'open';
+        // Focus management
+        const toFocus = closeBtn;
+        setTimeout(()=> toFocus.focus({preventScroll:true}), 0);
+        document.addEventListener('keydown', onKey);
+        backdrop.addEventListener('click', onBackdropClick);
       }
-    });
 
+      function closeModal(){
+        modal.removeAttribute('data-state');
+        backdrop.removeAttribute('data-open');
+        backdrop.setAttribute('aria-hidden','true');
+        document.removeEventListener('keydown', onKey);
+        backdrop.removeEventListener('click', onBackdropClick);
+        if(lastFocused) lastFocused.focus({preventScroll:true});
+      }
+
+      function onKey(e){
+        if(e.key === 'Escape') closeModal();
+        if(e.key === 'Tab'){
+          const nodes = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+          const focusables = Array.from(nodes).filter(el=>!el.hasAttribute('disabled'));
+          if(focusables.length===0) return;
+          const first = focusables[0];
+          const last = focusables[focusables.length-1];
+          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+      }
+
+      function onBackdropClick(e){ if(e.target === backdrop) closeModal(); }
+
+      closeBtn.addEventListener('click', closeModal);
+
+      // Intercept clicks on your existing anchors with class .animated_popup
+      document.querySelectorAll('a.animated_popup[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(ev){
+          ev.preventDefault();
+          const id = this.getAttribute('href').slice(1);
+          openModalFromTargetId(id);
+        });
+      });
+
+      // Deep link support: ?modal=id
+      const params = new URLSearchParams(location.search);
+      const deep = params.get('modal');
+      if(deep) openModalFromTargetId(deep);
+
+      // Expose helpers if you want to open programmatically
+      window.__openWorkshop = openModalFromTargetId;
+      window.__closeWorkshop = closeModal;
+    })();
   </script>
 
 </body>
