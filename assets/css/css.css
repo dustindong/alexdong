@@ -268,7 +268,7 @@ input[type="submit"] {
 
 .nav-ul-homepage {
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: "Inter";
   float: right;
   padding-right: 1.5em;
   text-transform: uppercase; }
@@ -374,7 +374,7 @@ input[type="submit"] {
 footer {
   background-color: #444;
   padding: 1em 0;
-  font-family: "Open Sans";
+  font-family: "Inter";
   text-transform: uppercase; }
   footer a {
     color: #ffffff; }
