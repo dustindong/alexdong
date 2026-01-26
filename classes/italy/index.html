@@ -16,7 +16,7 @@
   <header class="header-classes">
     <nav class="nav-homepage">
       <ul class="nav-ul-homepage">
-        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a href="http://alexdongtaichi.com">Home</a></a></li>
         <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
         <li><a href="../../classes/">Classes</a></li>
         <li><a href="../../legacy/">Legacy</a></li>
@@ -27,47 +27,42 @@
   </header>
 
   <div class="header-background">
-    <h1>New York City and the greater Northeast</h1>
+    <h1>Italy</h1>
   </div>
 
   <section class="history-classes">
     <div class="history-container classes-container">
-      <div class="header-city"><h1>* New York *</h1></div>
-      <h1><font color="red">Master Alex Dong and Assistants</font></h1>
+    <div class="header-city"><h1>* Siena *</h1></div>
+      <a href="#tonidemoulin-popup" class="animated_popup"><h1>Master Instructor: Claudio Corbelli</h1></a>
+        <div id="tonidemoulin-popup" class="image-popup" style="display:none">
+          <img src="../../assets/images/instructor/claudiocorbelli.jpg">
+          <h3>Master Intructor Claudio Corbelli</h3>
+          <p>Claudio was born in Siena, Italy. He started studying Taiji while he was in Newfoundland, Canada to pursue a PhD degree in Biology. Here a local teacher of the Yang Style introduced him to Taiji in 2002. In the same year Claudio went to Moncton, New Brunswick, to take part to a Taiji camp taught by Master Alex Dong. Since then he has been practicing Dong Style Taiji. In 2007 Claudio left his research position in the USA and came back to his native country to start up a Taiji school. In Siena he now also runs his non-profit charitable organization www.nirodha.it</p>
 
-      <p>Email: <a href="mailto:alexdongtaiji@gmail.com">alexdongtaiji@gmail.com</a>
-      <br>Website: <a href="https://www.alexdongtaichi.com">www.alexdongtaichi.com</a>
-     <br>Website: <a href="https://www.dongtaichionline.com">www.dongtaichionline.com</a>
-     <br>Website: <a href="https://www.worlddongtaichi.com">www.worlddongtaichi.com</a>
-     <br>Website: <a href="https://www.dongstyletaichi.com">www.dongstyletaichi.com</a>
-     <br>Website: <a href="https://www.worlddongtaichi.com">www.worlddongtaichi.com</a>
-      </p
-      
-      <h2>NYC Tai Chi and Qigong Schedule</h2>
+          <p>Claudio has been a teacher since 2005 and he has been visiting regularly with Master Alex Dong to improve on his Taiji. He takes part to training camps and workshops in Europe and North America. Claudio is also interested in other Eastern philosophies and practices Buddhist meditation.</p>
 
-      <h2>Wednesday mornings</h2>
-      <p>Central Park West, near 81st/NHM<br/>
-      10 to 11 am--All levels<br/>
-        
-      <h2>Thursday evenings</h2>
-      <p>440 Lafayette St. NY NY 10003<br/>
-      6:30 to 7:30 pm--All levels <br/>
-      7:30 to 8:30 pm--Intermediate and up. <br/>
+          <p>Claudio is aware that he has embarked in a lifelong Taiji journey, and he is very excited about it. In a world of fast information, Internet and quick fixes, he particularly treasures the old teaching process, the oral tradition, and the relationship master and disciple. Feeling the presence of all the previous masters in Master Alex's teachings is enlightening. Seeing Master Alex putting the teachings into practice is a memorable experience. The time spent in learning a true art, the solo practice and the fellowship with his Taiji friends are now very important parts of Claudio's life.</p>
+        </div>
+      <p>Email: <a href="mailto:claudio.dongtaichi@gmail.com">claudio.dongtaichi@gmail.com</a>
+            <br>Website: <a href="https://www.dongtaichisiena.it">dongtaichisiena.it</a></p>
+        <hr class="hr-black">
+    </div>
 
-      <p>Live online classes are available several times a week and recorded lessons are available for self-study or as a supplement. Workshops, small groups, and private lessons are also available. </p>
 
-      <p>We have a full-day workshop and a push hands class about once a month. Contact <a href="mailto:alexdongtaiji@gmail.com">alexdongtaiji@gmail.com</a> for details.</p>
-      
-      <p>For questions and other information, please contact <a href="mailto:alexdongtaiji@gmail.com">alexdongtaiji@gmail.com</a></p>
-     </div>
-  </section>
-  
-
+     <div class="history-container classes-container instructor-container">
+        <div class="header-city"><h1>* Pisa *</h1></div>
+      <h1>Senior Instructor Stefano Salvadori</h1></a>
+      <p>Email: <a href="mailto:stef_sa1970@yahoo.it">stef_sa1970@yahoo.it</a>
+      <br>Website: <a href="http://www.stefsa1970.wixsite.com/taichipisa">stefsa1970.wixsite.com/taichipisa</a>
+      <br>Website: <a href="http://www.stefsa1970.wixsite.com/taichipontedera">stefsa1970.wixsite.com/taichipontedera</a></p>
+      <hr class="hr-black">
+    </div>
+    </section>
 
   <footer>
     <nav class="footer-homepage">
       <ul class="footer-ul-homepage">
-        <li><a href="http://alexdongtaichi.com">Home</a></li>
+        <li><a href="http://alexdongtaichi.com">Home</a></a></li>
         <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
         <li><a href="../../classes/">Classes</a></li>
         <li><a href="../../legacy/">Legacy</a></li>
@@ -81,16 +76,23 @@
   <script src="../../assets/js/jquery.popup.js"></script>
   <script>
     $(function(){
+
       /*-------------------------------
+
         GENERAL EXAMPLES
+
       -------------------------------*/
+
       // Default usage
       $('.default_popup').popup();
+
       // Animated popup
       $('.animated_popup').popup({
         show        : function($popup, $back){
+
           var plugin = this,
             center = plugin.getCenter();
+
           $popup
             .css({
               top     : - $popup.children().outerHeight(),
@@ -101,8 +103,10 @@
               // Call the open callback
               plugin.o.afterOpen.call(plugin);
             });
+
         }
       });
+
       // Call ALL the callbacks
       $('.callback_popup').popup({
         beforeOpen          : function(type){
@@ -118,17 +122,24 @@
           console.log('afterClose');
         }
       });
+
       // Error popup
       $('.error_popup').popup({
         error   : function(content, type){
+
           // Just call open again, it'll replace the content
           this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
         }
       });
+
     });
+
     /*---------------------
+
       JQUERY EASING
+
     */
+
     $.extend($.easing, {
       easeOutBack: function (x, t, b, c, d, s) {
         if (s == undefined) s = 1.70158;
@@ -139,6 +150,7 @@
         return c*(t/=d)*t*((s+1)*t - s) + b;
       }
     });
+
   </script>
 
 </body>

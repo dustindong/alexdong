@@ -445,7 +445,7 @@ footer {
   margin-bottom: 2em; }
 
 .instructor-container {
-  padding-top: 4em; }
+  padding-top: 1em; }
 
 .london-title {
   padding-top: 3em; }
@@ -563,6 +563,20 @@ footer {
 .digital-store h3 {
   font-size: 1.2em;
   line-height: 2;
+}
+
+/* black line */
+hr.hr-black {
+  border-top: 1px solid black;
+}
+
+.header-city  {
+    font-size: 1em;
+    /* padding-top: 1em; */
+    margin-left: -20px;
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: darkblue;
 }
 
 /*# sourceMappingURL=css.css.map */
