@@ -579,4 +579,14 @@ hr.hr-black {
     color: darkblue;
 }
 
+.instructor-level-classes {
+  padding: 1em 1em; }
+  .instructor-level-classes h1 {
+    padding-bottom: 1em; }
+  .instructor-level-classes h2 {
+    margin-top: -50px;
+    padding: .5em 0 .5em 0;
+    font-size: 1.5em; }
+
+
 /*# sourceMappingURL=css.css.map */

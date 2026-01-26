@@ -16,7 +16,7 @@
   <header class="header-classes">
     <nav class="nav-homepage">
       <ul class="nav-ul-homepage">
-        <li><a href="http://alexdongtaichi.com">Home</a></a></li>
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
         <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
         <li><a href="../../classes/">Classes</a></li>
         <li><a href="../../legacy/">Legacy</a></li>
@@ -27,23 +27,56 @@
   </header>
 
   <div class="header-background">
-    <h1>China</h1>
+    <h1>Santa Barbara, California</h1>
   </div>
 
   <section class="history-classes">
-     <div class="history-container classes-container instructor-container">
-        <div class="header-city"><h1>* Beijing *</h1></div>
-      <h1>Instructor Barbara Dong</h1></a>
-      <p>Email: <a href="mailto:dongyanmei323@126.com">dongyanmei323@126.com</a>
+    <div class="history-container classes-container">
+    <div class="history-container classes-container instructor-container">
+      <a href="#toni2-popup" class="animated_popup"><h1>Instructor:  Toni Demoulin</h1></a>
+        <div id="toni2-popup" class="image-popup" style="display:none">
+          <h3> Toni Demoulin</h3>
+         
+        </div>
+      
+      <p>
+      Santa Barbara Tai Chi with Toni DeMoulin. Toni has been studying and teaching since 1972 .</p>
+
+      <h2>Instruction</h2>
+      <p>
+      traditional Yang taijiquan long form, Qi Gong, Hao & Dong (Tung) style taijiquan, weapons, applications, conflict resolution & Push Hands 
       </p>
-      <hr class="hr-black">
+      <h2>Schedule</h2>
+      <p>
+        Outdoor Morning Classes<br/>
+        203 Hitchcock Way #102, Santa Barbara 93105 10:00-11:00 AM<br/>
+        Tuesday, Thursday, Saturday, Sunday.
+      </p>
+
+      <p>
+        Indoors Evening Classes inside<br/>
+        Community Arts Workshop<br/>
+        631 Garden Street, Santa Barbara 93101<br/>
+        6:00-7:00 PM<br/>
+        Mondays & Wednesdays.<br/>
+      </p>
+
+      <h2>Contact</h2> 
+        <p>
+        Toni DeMoulin<br/>
+        805-570-6194<br/>
+        Email: <a href="mailto:taichitoni1@hotmail.com">taichitoni1@hotmail.com</a><br/>
+      </p>
     </div>
-    </section>
+
+    
+
+  </section>
 
   <footer>
     <nav class="footer-homepage">
       <ul class="footer-ul-homepage">
-        <li><a href="http://alexdongtaichi.com">Home</a></a></li>
+        <li><a href="http://alexdongtaichi.com">Home</a></li>
         <li><a target="_blank" href="http://blog.alexdongtaichi.com">Blog</a></li>
         <li><a href="../../classes/">Classes</a></li>
         <li><a href="../../legacy/">Legacy</a></li>
@@ -57,23 +90,16 @@
   <script src="../../assets/js/jquery.popup.js"></script>
   <script>
     $(function(){
-
       /*-------------------------------
-
         GENERAL EXAMPLES
-
       -------------------------------*/
-
       // Default usage
       $('.default_popup').popup();
-
       // Animated popup
       $('.animated_popup').popup({
         show        : function($popup, $back){
-
           var plugin = this,
             center = plugin.getCenter();
-
           $popup
             .css({
               top     : - $popup.children().outerHeight(),
@@ -84,10 +110,8 @@
               // Call the open callback
               plugin.o.afterOpen.call(plugin);
             });
-
         }
       });
-
       // Call ALL the callbacks
       $('.callback_popup').popup({
         beforeOpen          : function(type){
@@ -103,24 +127,17 @@
           console.log('afterClose');
         }
       });
-
       // Error popup
       $('.error_popup').popup({
         error   : function(content, type){
-
           // Just call open again, it'll replace the content
           this.open('<h1>ERROR!</h1><p>Content "'+content+'" of type "'+type+'" could not be loaded.</p>', 'html');
         }
       });
-
     });
-
     /*---------------------
-
       JQUERY EASING
-
     */
-
     $.extend($.easing, {
       easeOutBack: function (x, t, b, c, d, s) {
         if (s == undefined) s = 1.70158;
@@ -131,9 +148,10 @@
         return c*(t/=d)*t*((s+1)*t - s) + b;
       }
     });
-
   </script>
 
 </body>
 
 </html>
+
+
